@@ -10,10 +10,10 @@ The goal of this project is to predict the likelihood of loan default for indivi
 
 This project is organized with the following folder structure:
 
-- [`dataset`](./dataset): Contains the raw dataset files.
+- [`dataset`](./datas): Contains the raw dataset files.
 
-  - [`testA.csv`](./dataset/testA.csv): The raw testing dataset.
-  - [`train.csv`](./dataset/train.csv): The raw training dataset.
+  - [`testA.csv`](./datas/testA.csv): The raw testing dataset.
+  - [`train.csv`](./datas/train.csv): The raw training dataset.
 
 - [`model`](./model): Contains the trained machine learning model.
 
