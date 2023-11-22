@@ -1,23 +1,38 @@
 # Financial Risk Assessment for Loan Default Prediction
 
-This project is part of the Datawhale and Tianchi beginner series and is the fourth installment - "Introduction to Financial Risk Assessment: Loan Default Prediction" for individuals to practice machine learning.
+This project is part of the Datawhale and Tianchi beginner series and is the fourth installment - "Introduction to Financial Risk Assessment: Loan Default Prediction" for individuals to practice Machine Learning.
 
 ## Project Overview
 
 The goal of this project is to predict the likelihood of loan default for individual loan applicants in the context of financial risk assessment. Participants are required to use the data provided to make predictions based on the applicant's information and decide whether to approve or reject the loan application. This is a typical classification problem.
 
-## Dataset
+## Project Folder Structure
 
-The dataset used in this project is sourced from a credit platform and contains over 1.2 million records with 47 columns of variables. Among these, 15 columns are anonymized for privacy reasons. To ensure fairness in the competition, 800,000 records are selected as the training set, while 200,000 records each are designated as Test Set A and Test Set B. Additionally, certain fields such as `employmentTitle`, `purpose`, `postCode`, and `title` have been anonymized.
+This project is organized with the following folder structure:
 
-## Folder Structure
+- [`dataset`](./dataset): Contains the raw dataset files.
 
-The project's folder structure is organized as follows:
+  - [`testA.csv`](./dataset/testA.csv): The raw testing dataset.
+  - [`train.csv`](./dataset/train.csv): The raw training dataset.
 
-- `data_analysis`: This folder may contain any notebooks or scripts related to data exploration and analysis.
-- `dataset`: This folder is where you should place the dataset files (not included in this repository due to its size).
-- `train.py`: This Python script is used for training your machine learning models.
-- `predict.py`: This Python script is used for making predictions with trained models.
+- [`model`](./model): Contains the trained machine learning model.
+
+  - [`lgb_model.pkl`](./model/lgb_model.pkl): The trained Light Gradient Boosting (LGB) model.
+
+- [`process_datas`](./process_datas): Contains preprocessed data and intermediate files.
+
+  - [`test_process_datas.csv`](./process_datas/test_process_datas.csv): The preprocessed testing dataset of features.
+  - [`train_process_datas_x.csv`](./process_datas/train_process_datas_x.csv): The preprocessed training dataset of features.
+  - [`train_datas_Y.csv`](./process_datas/train_datas_Y.csv): The preprocessed training dataset of true values.
+
+- [`predict`](./predict): Contains prediction-related files.
+
+  - [`lgb_submit_proba.csv`](./predict/lgb_submit_proba.csv): The predicted probability for the testing dataset.
+  - [`lgb_submit.csv`](./predict/lgb_submit.csv): The predicted labels for the testing dataset.
+
+- [`data_analysis.ipynb`](./data_analysis.ipynb): Jupyter Notebook file for data preprocessing.
+- [`lgb_train_main.ipynb`](./lgb_train_main.ipynb): Jupyter Notebook file for training the Light Gradient Boosting model.
+- [`predict_main.ipynb`](./predict_main.ipynb): Jupyter Notebook file for predicting labels for the testing dataset.
 
 ## Getting Started
 
@@ -25,23 +40,4 @@ To get started with the project, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Place the dataset files in the `dataset` folder.
-3. Run the `train.py` script to train your machine learning models.
-4. Use the `predict.py` script to make predictions on new data.
-
-## Dependencies
-
-Make sure you have the following dependencies installed:
-
-- Python 3.x
-- Libraries such as pandas, scikit-learn, and any other necessary packages as specified in the project's code.
-
-## Usage
-
-Provide instructions on how to use the `train.py` and `predict.py` scripts, including any required arguments or parameters.
-
-```bash
-# Example command for training
-python train.py --input_file dataset/train.csv --output_model model.pkl
-
-# Example command for prediction
-python predict.py --input_model model.pkl --input_data dataset/test.csv --output_file predictions.csv
+3. Run the appropriate Jupyter Notebook files (`data_analysis.ipynb`, `lgb_train_main.ipynb`, `predict_main.ipynb`) to perform data preprocessing, model training, and predictions.
